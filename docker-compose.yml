@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: china-bridge-db
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    networks:
+      - bridge-net
+
+  app:
+    build:
+      context: .
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    container_name: china-bridge-app
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - bridge-net
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: china-bridge-nginx
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - bridge-net
+
+volumes:
+  postgres_data:
+
+networks:
+  bridge-net:
+    driver: bridge
