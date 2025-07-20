@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__input:not(:last-child) {
+    margin-bottom: var(--size-8);
+  }
+
+  &__btn {
+    margin-top: var(--size-40);
+  }
+}

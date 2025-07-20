@@ -1,0 +1,115 @@
+.section {
+  &__container {
+    padding-top: var(--size-40);
+    padding-bottom: var(--size-40);
+  }
+
+  &__back {
+    padding-left: 0;
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    display: inline-block;
+    width: calc((100% - var(--size-32)) / 2);
+
+    margin-bottom: var(--size-20);
+    padding-bottom: var(--size-20);
+
+    border-bottom: 1px solid var(--clr-border-black);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    text-align: justify;
+    margin-bottom: var(--size-32);
+
+    // &:last-child {
+    //   padding-bottom: var(--size-32);
+
+    //   border-bottom: 1px solid var(--clr-border-black);
+    // }
+  }
+
+  &__wrapper {
+    position: relative;
+    float: right;
+
+    aspect-ratio: 1;
+    width: calc((100% - var(--size-32)) / 2);
+    max-height: 700px;
+
+    margin: 0 0 var(--size-32) var(--size-32);
+    border-radius: var(--size-16);
+    overflow: hidden;
+
+    outline: 1px solid var(--clr-border-black);
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      width: 100%;
+
+      aspect-ratio: 2 / 1;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__subtitle {
+    width: 100%;
+    margin-bottom: var(--size-32);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--size-80);
+    row-gap: var(--size-40);
+
+    margin-bottom: var(--size-32);
+    padding-bottom: var(--size-32);
+    border-bottom: 1px solid var(--clr-border-black);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: var(--size-20);
+
+    &::before {
+      content: '';
+      display: inline-block;
+
+      flex-shrink: 0;
+      width: var(--size-32);
+      height: var(--size-32);
+      mask: url('/icons/list.svg') no-repeat center;
+      mask-size: contain;
+      background-color: var(--clr-primary);
+      margin-right: var(--size-8);
+    }
+  }
+
+  &__underline {
+    height: 1px;
+    background-color: var(--clr-border-black);
+  }
+}

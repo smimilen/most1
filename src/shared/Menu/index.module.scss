@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+
+  @media (max-width: 1024px) {
+    &_collapsed {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    text-transform: uppercase;
+
+    &_light {
+      color: var(--clr-white) !important;
+
+      &::before {
+        background-color: var(--clr-white) !important;
+      }
+    }
+  }
+}

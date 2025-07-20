@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  background: var(--clr-white);
+
+  color: var(--clr-black);
+
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: 'Neue Haas Unica';
+  line-height: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

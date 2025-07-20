@@ -1,0 +1,7 @@
+@use './_colors' as colors;
+@use './_sizes' as sizes;
+
+:root {
+  @include sizes.generate-size-vars(sizes.$sizes);
+  @include colors.generate-color-vars(colors.$colors);
+}

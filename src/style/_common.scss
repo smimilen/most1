@@ -1,0 +1,14 @@
+:where(.container) {
+  margin: 0 auto;
+  padding: 0 var(--size-40);
+
+  max-width: 1520px;
+
+  @media (max-width: 768px) {
+    padding: 0 var(--size-20);
+  }
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}

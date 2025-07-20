@@ -1,0 +1,21 @@
+$colors: (
+  primary: #cf1322,
+  primary-shade: #95030e,
+  primary-logo: #de2910,
+  secondary: #002976,
+  secondary-shade: #031d4e,
+  black: #000000,
+  white: #ffffff,
+  grey: #b9c1ce,
+  white-60: #ffffff99,
+  black-70: #333333b3,
+  border-white: #ffffff4d,
+  border-black: #00000040,
+  filler: #0000001a,
+);
+
+@mixin generate-color-vars($map) {
+  @each $group, $value in $map {
+    --clr-#{"" + $group}: #{$value};
+  }
+}

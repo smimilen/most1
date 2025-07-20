@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  z-index: 1000;
+
+  background-color: var(--clr-white);
+
+  padding-top: var(--size-40);
+
+  transition: background-color 0.3 ease-in-out;
+
+  &_light {
+    background-color: transparent;
+  }
+}

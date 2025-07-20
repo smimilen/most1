@@ -1,0 +1,53 @@
+@mixin text-style($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+
+  text-align: left;
+}
+
+@mixin underlined-text-style($font-size, $font-weight, $line-height) {
+  @include text-style($font-size, $font-weight, $line-height);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+:where(.Mega) {
+  @include text-style(var(--size-80), 400, 87.5%);
+}
+
+:where(.H1) {
+  @include text-style(var(--size-48), 400, normal);
+}
+
+:where(.H2) {
+  @include text-style(var(--size-32), 400, normal);
+}
+
+:where(.H3) {
+  @include text-style(var(--size-24), 400, normal);
+}
+
+:where(.H4) {
+  @include text-style(var(--size-16), 500, 100%);
+}
+
+:where(.XL) {
+  @include text-style(var(--size-20), 400, 130%);
+}
+
+:where(.L) {
+  @include text-style(var(--size-16), 400, 137.5%);
+}
+
+:where(.L2) {
+  @include text-style(var(--size-16), 400, 162.5%);
+}
+
+:where(.M) {
+  @include text-style(var(--size-16), 400, 125%);
+}
+
+:where(.S) {
+  @include text-style(var(--size-14), 400, 142.857%);
+}
