@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kamchatka-china-bridge.ru
+
+# Sitemaps
+Sitemap: https://kamchatka-china-bridge.ru/sitemap.xml
+Sitemap: https://kamchatka-china-bridge.ru/api/server-sitemap.xml
